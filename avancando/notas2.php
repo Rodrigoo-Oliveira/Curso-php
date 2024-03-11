@@ -1,5 +1,6 @@
 <?php
 
+
 $notas = [
     'Ana' => 10,
     'João' => 8,
@@ -25,3 +26,10 @@ var_dump($notas);
 
 krsort($notas);  // Ordena no formato decrescente das chaves( No caso ordem alfabética)
 var_dump($notas);
+
+if (is_array($notas)) {
+    echo 'Sim, é um array' . PHP_EOL;
+}
+
+var_dump(array_is_list($notas));
+
