@@ -33,3 +33,13 @@ if (is_array($notas)) {
 
 var_dump(array_is_list($notas));
 
+/*
+foreach ($notas as $aluno => $notas) {
+    if ($aluno === 'Vinicius') {
+        return true;
+    }
+}
+*/
+echo 'Vinicius fez a prova: ' . PHP_EOL;
+var_dump(isset($notas['Ana']));
+
