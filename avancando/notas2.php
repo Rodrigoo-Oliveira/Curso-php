@@ -43,5 +43,8 @@ foreach ($notas as $aluno => $notas) {
 echo 'Ana fez a prova: ' . PHP_EOL;
 var_dump(isset($notas['Ana']));
 
-echo 'Alguém tirou 6?' . PHP_EOL;
-var_dump(in_array(6,$notas));
+echo 'Alguém tirou 10?' . PHP_EOL;
+var_dump(in_array(10,$notas));
+
+echo 'Quem tirou 10?' .PHP_EOL;
+echo array_search(10, $notas);
