@@ -2,11 +2,11 @@
 
 
 $notas = [
-    'Ana' => 10,
+    'Vinicius' => null,
     'João' => 8,
-    'Maria' => 9,
+    'Ana' => 10,
     'Roberto' => 7,
-    'Vinicius' => 6
+    'Maria' => 9
 ];
 
 /*
@@ -40,6 +40,8 @@ foreach ($notas as $aluno => $notas) {
     }
 }
 */
-echo 'Vinicius fez a prova: ' . PHP_EOL;
+echo 'Ana fez a prova: ' . PHP_EOL;
 var_dump(isset($notas['Ana']));
 
+echo 'Alguém tirou 6?' . PHP_EOL;
+var_dump(in_array(6,$notas));
