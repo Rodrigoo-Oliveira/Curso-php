@@ -6,7 +6,7 @@ class Conta
     private string $nomeTitular;
     private float $saldo = 0;
 
-    public function sacar (float $valorASacar): void
+    public function saca(float $valorASacar): void
     {
         if ($valorASacar > $this->saldo) {
             echo "Saldo indisponivel";
@@ -16,7 +16,7 @@ class Conta
         $this->saldo -= $valorASacar;
     } 
 
-    public function depositar(float $valorADepoisitar): void
+    public function deposita(float $valorADepoisitar): void
     {
         if ($valorADepoisitar < 0) {
             echo "Valor precisa ser positivo";
@@ -26,23 +26,33 @@ class Conta
         $this->saldo += $valorADepoisitar;
     }
 
-    public function transferir(float $valorATransferir, Conta $contaDestino): void
+    public function transfere(float $valorATransferir, Conta $contaDestino): void
     {
         if ($valorATransferir > $this->saldo) {
             echo "Seu saldo é insulficiente";
             return;
         }
         
-        $this->sacar($valorATransferir);
-        $contaDestino->depositar($valorATransferir);
+        $this->saca($valorATransferir);
+        $contaDestino->deposita($valorATransferir);
     }
 
-    public function recuperarSaldo():float
+    public function recuperaSaldo():float
     {
         return $this->saldo;
     }
 
-    public function recuperarCPFTitular():string
+    public function defineCPFTitular(string $cpf):void
+    {
+        $this->cpfTitular = $cpf;
+    }
+
+    public function defineNomeTitular(string $nome):void
+    {
+        $this->nomeTitular = $nome;
+    }
+
+    public function recuperaCPFTitular():string
     {
         return $this->cpfTitular;
     }
