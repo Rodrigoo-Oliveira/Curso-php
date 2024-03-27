@@ -2,6 +2,7 @@
 
 class Conta 
 {
+
     private string $cpfTitular;        
     private string $nomeTitular;
     private float $saldo = 0;
@@ -15,6 +16,11 @@ class Conta
         $this->saldo = 0;
 
         self::$numeroDeContas++; // Para acessar atributos estáticos e possiveis metodos estáticos
+    }
+
+    public function __destruct()
+    {
+        self::$numeroDeContas--;
     }
 
     public function saca(float $valorASacar): void
