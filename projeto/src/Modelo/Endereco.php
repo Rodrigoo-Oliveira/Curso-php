@@ -1,6 +1,7 @@
 <?php
 
-namespace Alura\Banco\Modelo\Conta;
+namespace Alura\Banco\Modelo;
+
 class Endereco
 {
     private $cidade;
@@ -16,22 +17,22 @@ class Endereco
         $this->numero = $numero;
     }
 
-    public function recupraCidade():string
+    public function recuperaCidade(): string
     {
         return $this->cidade;
     }
 
-    public function recuperaBairro():string
+    public function recuperaBairro(): string
     {
         return $this->bairro;
     }
 
-    public function recuperaRua():string
+    public function recuperaRua(): string
     {
         return $this->rua;
     }
 
-    public function recuperaNumero():string
+    public function recuperaNumero(): string
     {
         return $this->numero;
     }
