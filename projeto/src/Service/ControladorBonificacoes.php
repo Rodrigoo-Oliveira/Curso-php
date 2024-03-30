@@ -18,4 +18,5 @@ class ControladorBonificacoes
     {   
         return $this->totalBonificacoes;
     }
+    
 }
