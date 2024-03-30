@@ -2,20 +2,16 @@
 
 namespace Alura\Banco\Modelo\Conta;
 
-class Conta
+abstract class Conta
 {
     private $titular;
-    private $saldo;
+    protected $saldo;
     private static $numeroDeContas = 0;
-    private $tipo;
 
-    //@var int $tipo 1 == Conta corrente; 2 == Poupança
-
-    public function __construct(Titular $titular, int $tipo)
+    public function __construct(Titular $titular)
     {
         $this->titular = $titular;
         $this->saldo = 0;
-        $this->tipo = $tipo;
 
         self::$numeroDeContas++;
     }
@@ -26,20 +22,16 @@ class Conta
     }
 
     public function saca(float $valorASacar): void
-    {
-        if ($this->tipo === 1) {
-            $tarifaSaque = $valorASacar * 0.05;
-        } else {
-            $tarifaSaque = $valorASacar * 0.03;
-        }
-
-        $valorSaque = $valorASacar + $tarifaSaque;
-        if ($valorSaque > $this->saldo) {
-            echo "Saldo indisponível";
-            return;
-        }
-        $this->saldo -= $valorSaque;
+{
+    $tarifaSaque = $valorASacar * $this->percentualTarifa();
+    $valorSaque = $valorASacar + $tarifaSaque;
+    if ($valorSaque > $this->saldo) {
+        echo "Saldo indisponível";
+        return;
     }
+
+    $this->saldo -= $valorSaque;
+}
 
     public function deposita(float $valorADepositar): void
     {
@@ -49,17 +41,6 @@ class Conta
         }
 
         $this->saldo += $valorADepositar;
-    }
-
-    public function transfere(float $valorATransferir, Conta $contaDestino): void
-    {
-        if ($valorATransferir > $this->saldo) {
-            echo "Saldo indisponível";
-            return;
-        }
-
-        $this->saca($valorATransferir);
-        $contaDestino->deposita($valorATransferir);
     }
 
     public function recuperaSaldo(): float
@@ -81,4 +62,7 @@ class Conta
     {
         return self::$numeroDeContas;
     }
+
+    abstract protected function percentualTarifa():float;
+   
 }
