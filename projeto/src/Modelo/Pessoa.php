@@ -2,8 +2,10 @@
 
 namespace Alura\Banco\Modelo;
 
-class Pessoa
+abstract class Pessoa
 {
+    use AcessoPropriedades;
+
     protected $nome;
     private $cpf;
 
