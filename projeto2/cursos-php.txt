@@ -1,3 +1,2 @@
-Design Patterns PHP I: Boas práticas de progrmação
-Design Patterns PHP II: Boas práticas de progrmação
-Orientacao a Objetos com PHP
+Design Patterns PHP I: Boas práticas de programação
+Design Patterns PHP II: Boas práticas de programação
