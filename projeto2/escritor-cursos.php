@@ -12,4 +12,4 @@ fclose($arquivo);
 
 $curso = "\nDesign Patterns PHP II: Boas práticas de progrmação";
 
-file_put_contents('cursos-php.txt', $curso, FILE_APPEND);
+file_put_contents('cursos-php.txt', $curso, FILE_APPEND); // file_put_contents (conteúdo deve ser adicionado ao arquivo ao invés de sobrescrevê-lo)
