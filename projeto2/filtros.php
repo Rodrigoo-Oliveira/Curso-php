@@ -1,7 +1,10 @@
 <?php
 
-$arquivoCursos = fopen(filename:'lista-cursos.txt', mode:'r');
+require 'MeuFiltro.php';
 
-stream_filter_append($arquivoCursos, filter_name:'string.toupper');
+$arquivoCursos = fopen('lista-cursos.txt', 'r');
 
-echo fread($arquivoCursos, filesize(filename:'lista-cursos.txt'));
+stream_filter_register('alura.partes', MeuFiltro::class);
+stream_filter_append($arquivoCursos, 'alura.partes');
+
+echo fread($arquivoCursos, filesize('lista-cursos.txt'));
