@@ -1,12 +1,11 @@
 <?php 
-
-
 class Produto
 {
     public $descricao;
     public $preco;
     public $qtde_disp;
     public $qtde_vend;
+    public $fabrica;
 
     public function __construct(string $descricao, float $preco)
     {
@@ -55,8 +54,22 @@ class Produto
 
         echo "Preço com desconto: " . $precoComDesconto . PHP_EOL;
 
-        if ($this->qtde_vend > 10) {
+        if ($this->qtde_vend >= 10) {
             echo "Você ganhou um desconto de 10%" . PHP_EOL; 
         }
+
+        echo "Fabricante: " . $this->fabrica->nome . PHP_EOL;
+        echo "Endereço: " . $this->fabrica->endereco . PHP_EOL;
+        echo "Telefone do Fabricante: " . $this->fabrica->retornaTelefone() ; PHP_EOL;
+    }
+
+    public function retornaFabricante()
+    {
+        return $this->fabrica;
+    }
+
+    public function atualizaFabricante($fabrica)
+    {
+        $this->fabrica = $fabrica;
     }
 }
