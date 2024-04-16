@@ -5,17 +5,12 @@ function funcao1()
     echo 'Entrei na função 1' . PHP_EOL;
     try {
     funcao2();
-    } catch (RuntimeException | DivisionByZeroError $erroOuExceção) { //Através de um | (pipe) na cláusula catch, podemos capturar mais de uma exceção. Com isso, podemos ter um único bloco para tratar uma ou mais exceções.
-        echo $erroOuExceção->getMessage() . PHP_EOL;
-        echo $erroOuExceção->getLine() . PHP_EOL;
-        echo $erroOuExceção->getTraceAsString() . PHP_EOL;
-        throw new RuntimeException(
-            'Exceção foi tratada, mas, pega aí',
-            1,
-            $erroOuExceção
-        );
+    } catch (Throwable $problema) { 
+        echo $problema->getMessage() . PHP_EOL;
+        echo $problema->getLine() . PHP_EOL;
+        echo $problema->getTraceAsString() . PHP_EOL;
     }
-
+    
     echo 'Saindo da função 1' . PHP_EOL;
 
 }
