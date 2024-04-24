@@ -9,7 +9,7 @@ $somaNotas = ($nota1 + $nota2 + $nota3) / 3;
 echo $somaNotas;
 */
 
-$notas = array(10, 7.3, 5);
+$notas = [10, 7.3, 5];
 $cont = 0;
 $quantNotas = count($notas);
 

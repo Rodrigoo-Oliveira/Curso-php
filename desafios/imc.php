@@ -11,7 +11,9 @@ if ($imc < 18.5) {
     echo "Abaixo do peso";
 } elseif  ($imc >= 18.5 && $imc < 24.9) {
     echo "Peso Normal";
+} elseif ($imc >= 25 && $peso < 30) {
+    echo "Excesso de peso";
 } else {
-    echo "Sobrepeso";
+    echo "Obesidade";
 }
 
