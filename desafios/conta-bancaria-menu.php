@@ -5,14 +5,13 @@ $titular = "João";
 $opcao = 0;
 
 do {
-
-echo "=========================\n";
-echo "Escolha umas das opções:\n";
-echo "1. Consultar saldo atual\n";
-echo "2. Sacar valor\n";
-echo "3. Depositar valor\n";
-echo "4. Sair\n";
-echo "=========================\n";
+    echo "=========================\n";
+    echo "Escolha umas das opções:\n";
+    echo "1. Consultar saldo atual\n";
+    echo "2. Sacar valor\n";
+    echo "3. Depositar valor\n";
+    echo "4. Sair\n";
+    echo "=========================\n";
 
     $opcao = (int)fgets(STDIN);
 
