@@ -1,22 +1,19 @@
 <?php
 
-require __DIR__ . "/src/funcoes.php";
+require __DIR__ . "/src/Modelo/Filme.php";
 
-echo "Bem-vindo(a) ao screen match!\n";
+echo "Bem-vindo(a) ao ScreenMatch\n";
 
-$nomeFilme = "Top Gun - Maverick";
+$filme = new Filme();
+$filme->nome = 'Thor - Ragnarok';
+$filme->anoLancamento = 2021;
+$filme->genero = 'super-heroi';
 
-$anoLancamento = 2022;
+$filme->avalia(10);
+$filme->avalia(10);
+$filme->avalia(5);
+$filme->avalia(5);
 
-$quantidadeDeNotas = $argc - 1;
-$notas = [];
+var_dump($filme);
 
-for ($contador = 1; $contador < $argc; $contador++) {
-    $notas[] = (float) $argv[$contador];
-}
-
-$notaFilme = array_sum($notas) / $quantidadeDeNotas;
-$planoPrime = true;
-
-$incluidoNoPlano = incluidoNoPlano($planoPrime, $anoLancamento);
-
+echo $filme->media();

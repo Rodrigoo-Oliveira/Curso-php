@@ -22,10 +22,6 @@ function criarFilme(string $nome, int $anoLancamento, float $nota, string $gener
     $filme->genero = $genero;
     $filme->nota = $nota;
 
-    return [
-        'nome' => $nome,
-        'ano' => $anoLancamento,
-        'nota' => $nota,
-        'genero' => $genero
-    ];
+    return $filme;
+
 }
